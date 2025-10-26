@@ -6,6 +6,7 @@ then
      exit 1
 fi
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROFILE="${2:-infra}"
 
 if [[ $1 == "apply" ]]
@@ -14,7 +15,7 @@ then
     docker compose \
         --parallel -1 \
         --project-name local \
-        --file ./deploy/docker/compose.yaml \
+        --file "${SCRIPT_DIR}/../deploy/docker/compose.yaml" \
         --profile ${PROFILE} \
         up --build -d --wait
     exit 0

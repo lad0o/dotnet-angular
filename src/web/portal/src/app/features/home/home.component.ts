@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth-service/auth.service';
+import { SapService, SapUser } from '../../core/services/sap-service/sap.service';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-home',
@@ -38,5 +40,5 @@ export class HomeComponent implements OnInit {
 			this.authService.accessToken = null;
 			this.router.navigate(['/auth/login']);
 		});
-	}
+	}	
 }

@@ -1,0 +1,30 @@
+    <div class="container">
+    <h2>თანამშრომლის ძიება</h2>
+
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <label for="pernr">ტაბელის ნომერი:</label>
+        <input
+        type="text"
+        id="pernr"
+        name="pernr"
+        [(ngModel)]="pernr"
+        required
+        />
+        <button type="submit" [disabled]="!form.valid">ძებნა</button>
+    </form>
+
+    <div *ngIf="employee" class="result">
+        <h3>მიღებული მონაცემები:</h3>
+        <p><b>ტაბელის N:</b> {{ employee?.pernr }}</p>
+        <p><b>სახელი:</b> {{ employee?.firstName }}</p>
+        <p><b>გვარი:</b> {{ employee?.lastName }}</p>
+        <p><b>დაბ. თარიღი:</b> {{ employee?.birthDate }}</p>
+        <p><b>პოზიცია:</b> {{ employee?.positionText }} </p>
+        <p><b>პოზიცია ID:</b> {{ employee?.positionId }} </p>
+
+    </div>
+
+    <div *ngIf="error" class="error">
+        {{ error }}
+    </div>
+    </div>

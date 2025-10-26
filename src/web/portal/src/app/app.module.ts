@@ -8,22 +8,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SapModule } from './features/sap/sap.module';
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
-		BrowserAnimationsModule,
-		CoreModule,
-		SharedModule,
-		AppRoutingModule,
-		CommonModule,
-		LoggerModule.forRoot({
-			level: environment.logLevel,
-			serverLogLevel: environment.logLevel,
-		}),
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,           
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    CoreModule,
+    SapModule,
+    SharedModule,
+    AppRoutingModule,        
+    LoggerModule.forRoot({
+      level: environment.logLevel,
+      serverLogLevel: environment.logLevel,
+    }),
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

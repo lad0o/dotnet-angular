@@ -15,10 +15,14 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddSwagger();
 }
 
+builder.Services.AddControllers();
+
 builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<SapService>();
 builder.Services.AddCors(options =>
 {
     var corsPolicy = builder.Configuration
@@ -48,9 +52,16 @@ app.UseWhen(
     });
 
 app.UseExceptionHandler();
-app.UseCors();
+
+app.UseRouting();        
+app.UseCors();           
 app.UseHttpsRedirection();
-app.UseAuthorization();
+
+app.UseAuthentication(); 
+app.UseAuthorization();  
+
+app.MapControllers();
+
 
 app.MapHealthChecks("/health");
 

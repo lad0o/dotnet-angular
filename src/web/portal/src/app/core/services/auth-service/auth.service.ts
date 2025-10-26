@@ -64,7 +64,7 @@ export class AuthService {
 			headers: {
 				'Content-Type': 'application/json',
 				Accept: 'application/json',
-				Connection: 'keep-alive',
+				// Connection: 'keep-alive',
 			},
 		});
 	}

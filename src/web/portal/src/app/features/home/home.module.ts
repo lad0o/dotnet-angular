@@ -5,6 +5,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { SapService } from '../../core/services/sap-service/sap.service';
 
 @NgModule({
 	imports: [AvatarModule, OverlayPanelModule, MenubarModule, DividerModule, HomeRoutingModule],

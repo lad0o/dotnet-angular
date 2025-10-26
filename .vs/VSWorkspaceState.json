@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\services",
+    "\\src\\services\\identity-provider",
+    "\\src\\services\\identity-provider\\src",
+    "\\src\\services\\identity-provider\\src\\IdentityProvider.Api",
+    "\\src\\services\\identity-provider\\src\\IdentityProvider.Domain",
+    "\\src\\services\\identity-provider\\tests",
+    "\\src\\services\\identity-provider\\tests\\IdentityProvider.Api.Test"
+  ],
+  "SelectedNode": "\\src\\services\\identity-provider\\tests\\IdentityProvider.Api.Test\\IdentityProvider.Api.Test.csproj",
+  "PreviewInSolutionExplorer": false
+}

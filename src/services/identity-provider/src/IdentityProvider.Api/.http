@@ -6,8 +6,8 @@ User-Agent: HttpFile/1.0
 Content-Type: application/json
 
 {
-  "username": "testuser",
-  "email": "test@email.com",
+  "username": "tes",
+  "email": "teta@email.com",
   "password": "P@ssw0rd!",
 }
 
@@ -18,8 +18,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "email": "test@email.com",
-  "password": "P@ssw0rd!"
+  "email": "la@mail.ru",
+  "password": "Darwin2001."
 }
 
 ### Fetch a new access token
