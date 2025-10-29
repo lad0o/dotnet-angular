@@ -6,9 +6,10 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { SapService } from '../../core/services/sap-service/sap.service';
+import { SapModule } from '../sap/sap.module';
 
 @NgModule({
-	imports: [AvatarModule, OverlayPanelModule, MenubarModule, DividerModule, HomeRoutingModule],
+	imports: [AvatarModule, OverlayPanelModule, MenubarModule, DividerModule, HomeRoutingModule, SapModule],
 	exports: [],
 	providers: [],
 	declarations: [HomeComponent],

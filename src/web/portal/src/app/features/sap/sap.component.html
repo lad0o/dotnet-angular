@@ -1,30 +1,33 @@
-    <div class="container">
-    <h2>თანამშრომლის ძიება</h2>
+<div class="sap-container">
 
-    <form (ngSubmit)="onSubmit()" #form="ngForm">
-        <label for="pernr">ტაბელის ნომერი:</label>
-        <input
+  <form (ngSubmit)="onSubmit()" #form="ngForm" class="sap-form">
+    <div class="form-group">
+      <label for="pernr">ტაბელის ნომერი</label>
+      <input
         type="text"
         id="pernr"
         name="pernr"
         [(ngModel)]="pernr"
+        placeholder="შეიყვანე ტაბელის ნომერი..."
         required
-        />
-        <button type="submit" [disabled]="!form.valid">ძებნა</button>
-    </form>
-
-    <div *ngIf="employee" class="result">
-        <h3>მიღებული მონაცემები:</h3>
-        <p><b>ტაბელის N:</b> {{ employee?.pernr }}</p>
-        <p><b>სახელი:</b> {{ employee?.firstName }}</p>
-        <p><b>გვარი:</b> {{ employee?.lastName }}</p>
-        <p><b>დაბ. თარიღი:</b> {{ employee?.birthDate }}</p>
-        <p><b>პოზიცია:</b> {{ employee?.positionText }} </p>
-        <p><b>პოზიცია ID:</b> {{ employee?.positionId }} </p>
-
+      />
     </div>
 
-    <div *ngIf="error" class="error">
-        {{ error }}
+    <button type="submit" [disabled]="!form.valid">ძებნა</button>
+  </form>
+
+  <div *ngIf="employee" class="result">
+    <div class="employee-info">
+      <p><span>ტაბელის N:</span> {{ employee?.pernr }}</p>
+      <p><span>სახელი:</span> {{ employee?.firstName }}</p>
+      <p><span>გვარი:</span> {{ employee?.lastName }}</p>
+      <p><span>დაბადების თარიღი:</span> {{ employee?.birthDate }}</p>
+      <p><span>პოზიცია:</span> {{ employee?.positionText }}</p>
+      <p><span>პოზიცია ID:</span> {{ employee?.positionId }}</p>
     </div>
-    </div>
+  </div>
+
+  <div *ngIf="error" class="error">
+      {{ error }}
+  </div>
+</div>

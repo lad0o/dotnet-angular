@@ -29,12 +29,4 @@ export class SapComponent {
       }
     });
   }
-
-	getEmployee() {
-		this.sapService.getEmployee("808080").subscribe({
-      next: (res) => {
-		console.log(res);
-      },
-    });
-	}
 }

@@ -40,5 +40,7 @@ export class HomeComponent implements OnInit {
 			this.authService.accessToken = null;
 			this.router.navigate(['/auth/login']);
 		});
-	}	
+	}
+
+	
 }

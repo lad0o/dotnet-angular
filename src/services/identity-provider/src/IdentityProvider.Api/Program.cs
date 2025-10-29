@@ -4,6 +4,7 @@ using IdentityProvider.Domain.Entities;
 using IdentityProvider.Infra.Data.Context;
 using IdentityProvider.Infra.Extensions;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.FeatureManagement;
@@ -35,6 +36,9 @@ builder.Services.AddHealthChecks();
 builder.Services.AddFeatureManagement(builder.Configuration);
 
 builder.Services.AddInfra(builder.Configuration);
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(@"C:\keys"))
+    .SetApplicationName("IdentityProviderApp");
 builder.Services
     .AddIdentityApiEndpoints<User>(builder.Configuration)
     .AddEntityFrameworkStores<AppDbContext>()
@@ -61,7 +65,6 @@ app.UseAuthentication();
 app.UseAuthorization();  
 
 app.MapControllers();
-
 
 app.MapHealthChecks("/health");
 
